@@ -1,2 +1,15 @@
-# user-scriptBL
-Automatic deletion of messages from people on the blacklist
+## Автоматическое удаление сообщений от людей из черного списка ВК
+
+### Нужные библиотеки Python:
+```
+threading, vk_api
+```
+
+---
+
+### Настройки и запуск:
+* в access_token из config.py -- вставляем токен VK ( https://vkhost.github.io )
+* python3 main.py 
+
+---
+ Настройки и способы запуска будут еще обновляться.
