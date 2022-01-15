@@ -9,6 +9,7 @@ threading, vk_api
 
 ### Настройки и запуск:
 * в access_token из config.py -- вставляем токен VK ( https://vkhost.github.io )
+* можно указать пользователей, которых бот будет игнорировать -- вставить письменный id в ignoreBan ( config.py )
 * python3 main.py 
 
 ---
