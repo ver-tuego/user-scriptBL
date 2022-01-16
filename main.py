@@ -31,7 +31,23 @@ def Handler(event):
     global getTime, listBanned
     user_id = event.user_id
 
-    print(f'#LOGS | {time.strftime("%m.%d %H:%M:%S")} | {user_id} | ', re.sub(r"\s", " ", event.text))
+    if event.text.lower() == '':
+        if event.attachments.get('attach1_type') != None:
+            if event.attachments['attach1_type'] == 'video':
+                typeAttach = '> Видео'
+            if event.attachments['attach1_type'] == 'sticker':
+                typeAttach = '> Стикер'
+            if event.attachments['attach1_type'] == 'audio':
+                typeAttach = '> Аудио'
+            if event.attachments['attach1_type'] == 'doc':
+                typeAttach = '> Документ'
+            if event.attachments['attach1_type'] == 'poll':
+                typeAttach = '> Опрос'
+            if event.attachments['attach1_type'] == 'money_request':
+                typeAttach = '> Денежный запрос'
+            print(f'#LOGS | {time.strftime("%m.%d %H:%M:%S")} | {user_id} | {typeAttach}')
+    if event.text.lower() != '':
+        print(f'#LOGS | {time.strftime("%m.%d %H:%M:%S")} | {user_id} | ', re.sub(r"\s", " ", event.text))
 
     if (time.time() - getTime) > 0:
         listBanned = getBanned(vk_session)
